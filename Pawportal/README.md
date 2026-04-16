@@ -1,73 +1,199 @@
-# React + TypeScript + Vite
+# 🐾 PawPortal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AI-Powered Pet Health & Activity Dashboard**
 
-Currently, two official plugins are available:
+PawPortal is a modern React-based web application that helps pet owners manage their pets’ health, activities, and medical records — with built-in AI-powered veterinary insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🐶 Pet Management
 
-## Expanding the ESLint configuration
+* Add and manage multiple pets
+* Track breed, age, and weight
+* Clean dashboard overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🩺 Vet Copilot (AI)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Describe symptoms or upload images
+* AI analyzes pet health using structured pipelines:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  * Symptom interpretation
+  * Risk assessment
+  * Care planning
+* Provides:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  * Clinical summary
+  * Risk level (Low → Critical)
+  * Recommended actions
+
+### 📋 Medical Records
+
+* Track:
+
+  * Vaccinations
+  * Medications
+  * Surgeries
+  * Checkups
+* Add notes and next due dates
+
+### 🏃 Activity Tracker
+
+* Log daily activities:
+
+  * Walks
+  * Playtime
+  * Training
+* View total activity stats
+
+### 📊 Analytics Dashboard
+
+* Activity breakdown charts
+* Pet distribution by species
+* Quick health insights
+
+---
+
+## 🧠 Tech Stack
+
+* **Frontend:** React + TypeScript + Vite
+* **Backend (optional):** Supabase
+* **AI Integration:** Gemini API
+* **Charts:** Recharts
+* **Icons:** Lucide React
+* **Styling:** Tailwind CSS
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/pawportal.git
+cd pawportal
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Install dependencies
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+---
+
+### 3. Configure environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+```
+
+> ⚠️ Do NOT commit your `.env` file.
+
+---
+
+### 4. Run the app locally
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔌 Optional Setup
+
+### Supabase Tables
+
+Create the following tables:
+
+* `pets`
+* `logs`
+* `medical_records`
+* `activity_logs`
+
+---
+
+### Gemini API
+
+Add your API key in the code:
+
+```ts
+const apiKey = "your_gemini_api_key";
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+pawportal/
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── components/
+├── public/
+├── .env
+├── package.json
+└── README.md
+```
+
+---
+
+## 🖼️ Screenshots (optional)
+
+*Add screenshots of your app here once deployed*
+
+---
+
+## 🚀 Deployment
+
+You can deploy easily using:
+
+* Vercel
+* Netlify
+
+Example (Vercel):
+
+```bash
+npm install -g vercel
+vercel
+```
+
+---
+
+## ⚠️ Notes
+
+* App works without Supabase (local state fallback)
+* AI features require Gemini API key
+* Ensure environment variables are correctly configured
+
+---
+
+## 📌 Future Improvements
+
+* User authentication
+* Notifications for medical due dates
+* Multi-user support
+* Mobile app version
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repo
+* 🍴 Fork it
+* 🧠 Contribute ideas
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
